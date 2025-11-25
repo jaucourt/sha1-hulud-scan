@@ -2,7 +2,11 @@
 Scans repo for Sha1-Hulud vulnerable packages
 
 # usage
-Navigate to the repo you want to scan, then run scanner.js:
+Install the one dependency (not, it's not on the vulnerability list):
+```
+$ npm i
+```
+Then navigate to the repo you want to scan, followed by running scanner.js, e.g.:
 ```
 $ node ../sha1-hulud-scan/scanner.js
 ```

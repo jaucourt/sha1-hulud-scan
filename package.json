@@ -1,0 +1,23 @@
+{
+  "name": "sha1-hulud-scan",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Scanner for any dependencies vulnerable to sha1-hulud-scan",
+  "main": "scanner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaucourt/sha1-hulud-scan.git"
+  },
+  "author": "jaucourt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaucourt/sha1-hulud-scan/issues"
+  },
+  "homepage": "https://github.com/jaucourt/sha1-hulud-scan#readme",
+  "dependencies": {
+    "csv-parser": "^3.2.0"
+  }
+}

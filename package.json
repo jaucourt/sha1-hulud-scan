@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/jaucourt/sha1-hulud-scan/issues"
   },
-  "homepage": "https://github.com/jaucourt/sha1-hulud-scan#readme",
-  "dependencies": {
-    "csv-parser": "3.2.0"
-  }
+  "homepage": "https://github.com/jaucourt/sha1-hulud-scan#readme"
 }

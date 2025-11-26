@@ -1,5 +1,5 @@
 # sha1-hulud-scan
-Scans repo for Sha1-Hulud vulnerable packages
+Scans repo for Sha1-Hulud vulnerable packages. Uses node 22+
 
 # usage
 Install the one dependency (not, it's not on the vulnerability list):

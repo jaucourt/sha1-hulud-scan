@@ -2,15 +2,23 @@
 import { execSync } from 'child_process';
 import fs from 'fs';
 import csvParser from 'csv-parser';
+// import fetch from 'node-fetch';
 
 
 // List of packages to scan for
 const results = [];
-fs.createReadStream(new URL('./compromised-packages.csv', import.meta.url), 'utf8')
-  .pipe(csvParser())
-  .on('data', (data) => results.push(data))
-  .on('end', () => {
-    const packages = results.map(row => row.package_name);
+fetch('https://raw.githubusercontent.com/Cobenian/shai-hulud-detect/main/compromised-packages.txt')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Failed to fetch compromised packages list: ${response.statusText}`);
+    }
+    return response.text();
+  })
+  .then(text => {
+    const packages = text.split('\n')
+      .map(line => line.trim())
+      .filter(line => line && !line.startsWith('#'))
+      .map(line => line.split(':')[0]);
     console.log('Scanning installed packages…');
 
     // Generate the npm dependency tree and save it to a temporary file
@@ -22,6 +30,7 @@ fs.createReadStream(new URL('./compromised-packages.csv', import.meta.url), 'utf
     }
     
     // Read the generated npm-tree.txt file
+    
     const npmTree = fs.readFileSync('npm-tree.txt', 'utf8');
     
     console.log('\n=== RESULTS ===');

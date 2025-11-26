@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 import { execSync } from 'child_process';
 import fs from 'fs';
-import csvParser from 'csv-parser';
-// import fetch from 'node-fetch';
-
 
 // List of packages to scan for
 const results = [];
